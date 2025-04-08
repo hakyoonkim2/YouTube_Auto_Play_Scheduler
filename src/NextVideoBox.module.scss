@@ -1,0 +1,229 @@
+.container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 12px;
+  z-index: 999999;
+  font-size: 14px;
+  width: 300px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  font-family: 'Pretendard', sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dropArea {
+  border: 2px dashed;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 13px;
+  transition: background 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.queueTitle {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.empty {
+  font-size: 12px;
+  color: #999;
+  padding: 6px 0;
+}
+
+.videoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+  max-height: 100%;
+  padding-right: 4px;
+}
+
+.videoItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+  transition: background 0.2s;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dragHandle {
+  cursor: grab;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  padding: 0 4px;
+  color: #888;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.videoContent {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 8px;
+}
+
+.videoInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.videoTitle {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.channelInfo {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.channelIcon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.deleteBtn {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.deleteBtn:hover {
+  color: #e53935;
+}
+
+.floatingBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999999;
+  background: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background: #cc0000;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  color: #888;
+  cursor: pointer;
+
+  &:hover {
+    color: #e53935;
+  }
+}
+
+.themeToggle {
+  background: transparent;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+  margin-bottom: 6px;
+  align-self: flex-end;
+  transition: color 0.3s;
+}
+
+/* 라이트 테마 */
+.light {
+  background: #fff;
+  color: #000;
+
+  .dropArea {
+    background: #f9f9f9;
+    border-color: #3ea6ff;
+    color: #333;
+  }
+
+  .videoTitle {
+    color: #202020;
+  }
+
+  .channelInfo {
+    color: #606060;
+  }
+
+  .videoItem:hover {
+    background: #f5f5f5;
+  }
+
+  .themeToggle {
+    color: #333;
+  }
+}
+
+/* 다크 테마 */
+.dark {
+  background: #1e1e1e;
+  color: #eee;
+
+  .dropArea {
+    background: #2a2a2a;
+    border-color: #777;
+    color: #ccc;
+  }
+
+  .videoTitle {
+    color: #eee;
+  }
+
+  .channelInfo {
+    color: #aaa;
+  }
+
+  .videoItem:hover {
+    background: #333;
+  }
+
+  .themeToggle {
+    color: #bbb;
+  }
+
+  .deleteBtn:hover {
+    color: #ff6b6b;
+  }
+}
