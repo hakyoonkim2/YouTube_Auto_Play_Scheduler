@@ -1,6 +1,6 @@
 // src/content.tsx
 import ReactDOM from "react-dom/client";
-import NextVideoBox from "./NextVideoBox";
+import NextVideoBox from "./components/NextVideoBox";
 
 const mountId = "next-video-react-root";
 
