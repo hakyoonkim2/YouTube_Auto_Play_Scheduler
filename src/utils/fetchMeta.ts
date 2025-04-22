@@ -4,16 +4,18 @@ export const fetchMeta = async (url: string): Promise<VideoItem | null> => {
   try {
     const parsedUrl = new URL(url);
     let videoId: string | null = null;
+    let newUrl = url;
 
     if (parsedUrl.pathname.startsWith("/watch")) {
       videoId = parsedUrl.searchParams.get("v");
     } else if (parsedUrl.pathname.startsWith("/shorts/")) {
       videoId = parsedUrl.pathname.split("/shorts/")[1].split(/[/?#]/)[0];
+      newUrl = `https://www.youtube.com/watch?v=${videoId}`;
     }
 
     if (!videoId) return null;
 
-    const res = await fetch(`https://noembed.com/embed?url=${encodeURIComponent(url)}`);
+    const res = await fetch(`https://noembed.com/embed?url=${encodeURIComponent(newUrl)}`);
     const data = await res.json();
 
     return {
@@ -27,3 +29,5 @@ export const fetchMeta = async (url: string): Promise<VideoItem | null> => {
     return null;
   }
 };
+
+

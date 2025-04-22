@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "YouTube Auto Play Scheduler",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Easily queue and auto-play YouTube videos with a drag-and-drop UI that stays on the page.",
     "permissions": ["storage"],
     "host_permissions": ["*://www.youtube.com/*"],
